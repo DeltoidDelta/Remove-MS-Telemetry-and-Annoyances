@@ -1,6 +1,6 @@
 # Remove Microsoft® Telemetry and Annoyances
 
-This script disables Microsoft®'s telemetry, removes the telemetry and or updates that are typically considered annoying for the day to day users, and ensures that least information is sent back to Microsoft® by adding Microsoft®'s telemetry servers to hosts file. This script is *forked from tarampampam's remove_MS_telemetry.cmd*, and is continued support as the author has officially claimed that he / she will no longer provide update to the script.
+This script disables Microsoft®'s telemetry, removes the function of the telemetry, in addition to updates that are typically considered annoying for the day to day users, and ensures that least information is sent back to Microsoft® by adding Microsoft®'s telemetry servers to hosts file. This script is *forked from tarampampam's remove_MS_telemetry.cmd*, and is unofficially continued script as the author has officially claimed that he / she will no longer provide update to the script.
 
 # Documentation
 
@@ -13,9 +13,9 @@ Few things to note in mind:
 
 Download and run the script with administrator privilege.
 
-###Script support arguments:                                               
+###Script Support Arguments:                                               
 
- '-kb ^| -hotfixes Do NOT uninstall updates                              
+ -kb ^| -hotfixes Do NOT uninstall updates                              
  -d ^| -disable   Do NOT disable updates                                
  -t ^| -tasks     Do NOT disable tasks                                  
  -s ^| -services  Do NOT disable services                               
@@ -24,7 +24,7 @@ Download and run the script with administrator privilege.
  -h ^| -hosts     Do NOT add domains to hosts file                      
  -u ^| -updates   Do NOT change windows update settings                 
  -l ^| -log       Do NOT write messages to .log file                    
- -e ^| -exit      Exit when work is complete'                            
+ -e ^| -exit      Exit when work is complete                      
 
 # Disclaimer
 

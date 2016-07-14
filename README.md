@@ -13,18 +13,18 @@ Few things to note in mind:
 
 Download and run the script with administrator privilege.
 
-###Script Support Arguments:                                               
-
- -kb ^| -hotfixes Do NOT uninstall updates                              
- -d ^| -disable   Do NOT disable updates                                
- -t ^| -tasks     Do NOT disable tasks                                  
- -s ^| -services  Do NOT disable services                               
- -i ^| -ip        Do NOT block IP addresses using route                 
- -f ^| -firewall  Do NOT block IP addresses using firewall              
- -h ^| -hosts     Do NOT add domains to hosts file                      
- -u ^| -updates   Do NOT change windows update settings                 
- -l ^| -log       Do NOT write messages to .log file                    
- -e ^| -exit      Exit when work is complete                      
+&nbsp; | Supported Arguments
+----: | :-------------
+-kb (-hotfixes)  | Do NOT uninstall updates                              
+-d  (-disable)   | Do NOT disable updates                                
+-t  (-tasks)     | Do NOT disable tasks                                  
+-s  (-services)  | Do NOT disable services                               
+-i  (-ip)        | Do NOT block IP addresses using route                 
+-f  (-firewall)  | Do NOT block IP addresses using firewall              
+-h  (-hosts)    | Do NOT add domains to hosts file                      
+-u  (-updates)   | Do NOT change windows update settings                 
+-l  (-log)      | Do NOT write messages to .log file                    
+-e  (-exit)      | Exit when work is complete                      
 
 # Disclaimer
 

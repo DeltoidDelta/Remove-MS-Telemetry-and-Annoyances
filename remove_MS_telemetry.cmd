@@ -3,7 +3,7 @@ title "Remove Microsoft® Telemetry and Annoyances"
 endlocal & setlocal EnableDelayedExpansion
 
 rem Script Updated by <https://github.com/simdol>
-rem Script Originally Created by <github.com/tarapampam> #2015
+rem Script Originally Created by <github.com/tarampampam> #2015
 rem Script Version: 0.3.0 <07/14/2016>
 rem Supports: Microsoft Windows 7/8/8.1
 

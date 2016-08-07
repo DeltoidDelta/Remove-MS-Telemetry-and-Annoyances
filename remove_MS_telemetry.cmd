@@ -4,7 +4,7 @@ endlocal & setlocal EnableDelayedExpansion
 
 rem Script Updated by <https://github.com/simdol>
 rem Script Originally Created by <github.com/tarampampam> #2015
-rem Script Version: 0.3.1 <07/27/2016>
+rem Script Version: 0.3.2 <08/07/2016>
 rem Supports: Microsoft Windows 7/8/8.1
 
 echo.
@@ -115,8 +115,8 @@ if %UninstallUpdates%==1 (
   rem 3112336 - Windows Update Client for Windows 7 and Windows Server 2008 R2: February 2016 // 7 SP1 / WS 2008 R2 / Embedded Standard 7 SP1
   rem 2976978 - Compatibility update for Windows 8.1 and Windows 8 // 8 / 8.1
   rem 2977759 - Compatibility update for Windows 7 RTM // 7
-  rem 3170735 - July 2016 Update for Windows Journal  // 7 SP1 / 8 / 8.1
-  rem 3035583 - Update installs Get Windows 10 app in Windows 8.1 and Windows 7 SP1 / 7 SP1 / 8.1
+  rem 3170735 - July 2016 Update for Windows Journal // 7 SP1 / 8 / 8.1
+  rem 3161102 - Update for Windows Journal component removal // 7 SP1 / 8 / 8.1
 
   for %%? in (
     "3080149"
@@ -149,7 +149,7 @@ if %UninstallUpdates%==1 (
     "2976978"
     "2977759"
     "3170735"
-    "3035583"
+    "3161102"
   ) do call:uninstall_update %%?
 )
 

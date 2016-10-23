@@ -35,7 +35,7 @@ echo   *                     WARNING WARNING WARNING                            
 echo   *             READ THE DOCUMENTATION BEFORE PROCEEDING!                    *
 echo   *                                                                         *
 echo   ***************************************************************************
-echo
+echo.
 
 rem Setting up default script values and declaring variables
 set ExitOnComplete=0

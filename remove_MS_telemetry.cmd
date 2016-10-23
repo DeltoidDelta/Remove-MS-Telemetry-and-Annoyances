@@ -643,7 +643,7 @@ goto:end
   exit /b
 
 :end
-  call:title "The script will exit after 60 seconds has been past. Press any keys to exit the script now."
+  call:title "The script will exit in 60 seconds. Press any key to exit now."
   timeout /t 60>nul 2>&1
   endlocal & if %ExitOnComplete%==1 (exit)
 echo on

@@ -14,30 +14,31 @@ echo   *                   Remove MS Telemetry and Annoyances                   
 echo   *                                                                         *
 echo   ***************************************************************************
 echo   *                                                                         *
-echo   * Script support arguments:                                               *
+echo   * You can use these arguments:                                            *
 echo   *                                                                         *
 echo   *   -kb ^| -hotfixes Do NOT uninstall updates                              *
-echo   *   -d ^| -disable   Do NOT disable updates                                *
-echo   *   -t ^| -tasks     Do NOT disable tasks                                  *
-echo   *   -s ^| -services  Do NOT disable services                               *
-echo   *   -i ^| -ip        Do NOT block IP addresses using route                 *
-echo   *   -f ^| -firewall  Do NOT block IP addresses using firewall              *
-echo   *   -h ^| -hosts     Do NOT add domains to hosts file                      *
-echo   *   -u ^| -updates   Do NOT change windows update settings                 *
-echo   *   -l ^| -log       Do NOT write messages to .log file                    *
-echo   *   -e ^| -exit      Exit when work is complete                            *
+echo   *   -d  ^| -disable  Do NOT disable updates                                *
+echo   *   -t  ^| -tasks    Do NOT disable tasks                                  *
+echo   *   -s  ^| -services Do NOT disable services                               *
+echo   *   -i  ^| -ip       Do NOT block IP addresses using route                 *
+echo   *   -f  ^| -firewall Do NOT block IP addresses using firewall              *
+echo   *   -h  ^| -hosts    Do NOT add domains to the hosts file                  *
+echo   *   -u  ^| -updates  Do NOT change Windows Update settings                 *
+echo   *   -l  ^| -log      Do NOT write any messages to .log file                *
+echo   *   -e  ^| -exit     Exit when done                                        *
 echo   *                                                                         *
-echo   * Latest version you can find here: ^<^http://preview.tinyurl.com/j9pvtw2^>  *
+echo   * You can find the latest version here:                                   *
+echo   *   ^<^http://preview.tinyurl.com/j9pvtw2^>                                  *
 echo   *                                                                         *
 echo   ***************************************************************************
 echo   *                                                                         *
-echo   *                     WARNING WARNING WARNING                             *
-echo   *             READ THE DOCUMENTATION BEFORE PROCEEDING!                    *
+echo   *                          WARNING WARNING WARNING                        *
+echo   *            BEFORE PROCEEDING, PLEASE READ THE DOCUMENTATION             *
 echo   *                                                                         *
 echo   ***************************************************************************
 echo.
 
-rem Setting up default script values and declaring variables
+rem Set up default script values and declarе variables
 set ExitOnComplete=0
 set WriteLogFile=1
 set UninstallUpdates=1
@@ -85,7 +86,7 @@ goto:checkPermissions
 
 if %UninstallUpdates%==1 (
   call:title "1/8 - Uninstalling evil updates.."
-  rem You can find KB description here: https://support.microsoft.com/en-us/kb/%KB_NUMBER%
+  rem You can find KB descriptions here: https://support.microsoft.com/en-us/kb/%KB_NUMBER%
   rem 3080149 - Update for customer experience and diagnostic telemetry // 8.1 / WS 2012 R2, 7 SP1 / WS 2008 R2 SP1
   rem 3075249 - Update that adds telemetry points to consent.exe in Windows 8.1 and Windows 7 // 8.1 / RT 8.1 / WS 2012 R2 / 7 SP1 / WS 2008 R2 SP1
   rem 2952664 - Compatibility update for upgrading Windows 7 // 7 SP1
@@ -217,7 +218,7 @@ if %DisableServices%==1 (
 )
 
 if %BlockIPaddresses%==1 (
-  call:title "5/8 - Blocking MS server's IP addresses.."
+  call:title "5/8 - Blocking MS servers' IP addresses.."
   for %%? in (
     "111.221.29.177"
     "111.221.29.253"
@@ -276,13 +277,13 @@ if %BlockIPaddresses%==1 (
 )
 
 if %BlockIPaddressesWithFirewall%==1 (
-  call:title "6/8 - Blocking IP addresses to firewall rule.."
+  call:title "6/8 - Blocking IP addresses by firewall rules.."
   rem To do this, you must init IP addresses list by calling 'call:block_route "1.1.1.1"' first!
   call:block_routes_with_firewall
 )
 
 if %AddDomainsToHosts%==1 (
-  call:title "7/8 - Finding and adding MS domains to HOSTS file ^(block^).."
+  call:title "7/8 - Finding and adding MS domains to HOSTS file ^(to block^).."
   for %%? in (
     "--title--"
     "msedge.net"
@@ -424,7 +425,7 @@ if %AddDomainsToHosts%==1 (
 )
 
 if %DisableAutomaticUpdates%==1 (
-  call:title "8/8 - Disabling automatic Windows® update ^(make search, but you must manually select updates to install^)"
+  call:title "8/8 - Disabling automatic Windows update ^(search automatically, select and install manually^)"
   set RegeditRoot="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update"
   reg add !RegeditRoot! /v AUOptions /t REG_DWORD /d 2 /f>nul
   reg add !RegeditRoot! /v IncludeRecommendedUpdates /t REG_DWORD /d 0 /f>nul
@@ -463,7 +464,7 @@ goto:end
   if %errorLevel%==0 (
     goto:begin
   ) else (
-    call:log "Failure: Please run this script with administrtor's privilege!"
+    call:log "Failure: Please run this script with administrator rights"
     goto:end
   )
   exit /b
@@ -491,7 +492,7 @@ goto:end
       call:log "Local unzip tool found"
     ) else (
       set unzip_tool="%temp%\unzip.exe"
-      call:log "Download unzip tool.."
+      call:log "Downloading unzip tool.."
       rem Original source: http://stahlworks.com/dev/unzip.exe
       call:download_file "https://www.dropbox.com/s/gxf8d4bg0yyozdh/unzip.exe?dl=1" !unzip_tool!
     )
@@ -522,7 +523,7 @@ goto:end
             set result=100
             timeout /t 2 /nobreak>nul & tskill powershell>nul 2>&1 & timeout /t 2 /nobreak>nul
           ) else (
-            call:log "Failure: Installation module 'PSWindowsUpdate' failed - files in !pswu_distr_path! not found" "Installation failed"
+            call:log "Failure: Installation of 'PSWindowsUpdate' module failed - files in !pswu_distr_path! not found" "Installation failed"
           )
         )
       )
@@ -545,7 +546,7 @@ goto:end
 :disable_updates
   rem Adding update to Windows Update exceptions (hide update) using PowerShell
   if [!UpdatesList!] EQU [] (
-    call:log "Failure Update list empty. To add update ID to block list, - uninstall update(s) prior to running this script" "Error"
+    call:log "Failure: update list is empty. To add update IDs to block list, please uninstall update(s) prior to running this script" "Error"
     exit /b
   )
   rem Remove last (',') char
@@ -555,9 +556,9 @@ goto:end
     call:log "Disable updates: !UpdatesListForDisabling!.."
     powershell -ExecutionPolicy RemoteSigned -NoLogo -Noninteractive -Command "Import-Module PSWindowsUpdate; try { Hide-WUUpdate -KBArticleID !UpdatesListForDisabling! -Confirm:$false; exit 100; } catch { exit 0; }">nul 2>&1
     if !errorlevel!==100 (
-      call:log "Updates successfully DISABLED"
+      call:log "Updates are successfully DISABLED"
     ) else (
-      call:log "Failure Unable to disable updates: Update your PowerShell or install PowerShell module 'PSWindowsUpdate'" "Error"
+      call:log "Failure: unable to disable updates. Please update your PowerShell or install 'PSWindowsUpdate' PowerShell module" "Error"
     )
   )
   exit /b
@@ -565,7 +566,7 @@ goto:end
 :block_route
   set REDIRECT=0.0.0.0
   set ip_addr=%~1
-  call:log "Blocking: %ip_addr%"
+  call:log "Blocking %ip_addr%"
   route -p ADD %ip_addr% MASK 255.255.255.255 %REDIRECT%>nul 2>&1
   rem Adding all addresses to single string variable (',' is delimiter)
   set FirewallIPlist=%FirewallIPlist%%ip_addr%,
@@ -573,7 +574,7 @@ goto:end
 
 :block_routes_with_firewall
   if [!FirewallIPlist!] EQU [] (
-    call:log "Failure Empty IP list. For add IP to firewall block list - block ip by route first" "Error"
+    call:log "Failure: empty IP list. For adding IP to firewall block list, please block IP by route first" "Error"
     exit /b
   )
   if exist %SystemRoot%\System32\netsh.exe (
@@ -585,16 +586,16 @@ goto:end
     if %errorlevel% EQU 0 (
       call:log "IP addresses blocked with firewall rule '!FirewallRuleName!': '!FirewallIPlist:~0,-1!'"
     ) else (
-      call:log "Cannot add firewall rule '!FirewallRuleName!' - maybe firewall service disabled^?" "Error"
+      call:log "Cannot add '!FirewallRuleName!' firewall rule - maybe firewall service is disabled^?" "Error"
     )
   ) else (
-    call:log "Failure Windows Firewall® is not accessible (file 'netsh.exe' does not exist)" "Error"
+    call:log "Failure: Windows Firewall is not accessible ('netsh.exe' file does not exist)" "Error"
   )
   exit /b
 
 :disable_task
   set task_name=%~1
-  call:log "Disable task %task_name%"
+  call:log "Disabling task %task_name%"
   schtasks /Change /TN "%task_name%" /DISABLE>nul 2>&1
   exit /b
 
@@ -633,17 +634,17 @@ goto:end
       echo %block_title%>>%HOSTS%
     ) else (
       echo %REDIRECT% %host_name%>>%HOSTS%
-      call:log "Blocking Domain %host_name%"
+      call:log "Blocking domain %host_name%"
     )
   ) else (
     if !write_title! NEQ 1 (
-      call:log "Existing block: %host_name%"
+      call:log "Domain is already blocked: %host_name%"
     )
   )
   exit /b
 
 :end
-  call:title "The script will exit in 60 seconds. Press any key to exit now."
+  call:title "The script will exit automatically in 60 seconds. Press any key to exit now."
   timeout /t 60>nul 2>&1
   endlocal & if %ExitOnComplete%==1 (exit)
 echo on

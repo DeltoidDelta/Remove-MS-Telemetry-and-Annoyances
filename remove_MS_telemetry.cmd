@@ -155,7 +155,7 @@ if %UninstallUpdates%==1 (
 
 if %DisableUpdates%==1 (
   call:title "2/8 - Disabling ^(hiding^) uninstalled updates.."
-  call:log "It can take a lot of time - wait please, or use -d flag for disable this feature.." "NOTE"
+  call:log "It can take a lot of time - wait please, or use -d flag to disable this feature.." "NOTE"
   rem To do this, you must init updates list by calling 'call:uninstall_update "123123"' first!
   call:disable_updates
 )

@@ -6,25 +6,25 @@ This script disables Microsoft®'s telemetry, removes the function of the teleme
 
 Few things to note in mind:
 
-- *Always* review the script first, see the changes that is going to make to your computer before running the script!
-- This script is experimental is not to be used in day to day production machine without reviewing the changes that is going to make to your Windows installation.
-- You may need to disable HIPS (Host Intrusion Detection System) in addition to your anti-malware software or whitelist this script to allow the changes to be made to your computer.
+- *Always* review the script first, see the changes that it is going to make to your computer before running the script!
+- This script is experimental. Please do not use in production environment without reviewing the changes that it is going to make to your Windows installation.
+- You may need to disable HIPS (Host Intrusion Detection System) in addition to your anti-malware software, or whitelist this script to allow the changes to be made to your computer.
 - Be sure to ask or file an issue if you need help or if the script is not working as it is intended to be. Please feel free to file a new issue should Microsoft release a new 'evil' update.
 
 Download and run the script with administrator privilege.
 
 &nbsp; | Supported Arguments
 ----: | :-------------
--kb (-hotfixes)  | Do NOT uninstall updates                              
--d  (-disable)   | Do NOT disable updates                                
--t  (-tasks)     | Do NOT disable tasks                                  
--s  (-services)  | Do NOT disable services                               
--i  (-ip)        | Do NOT block IP addresses using route                 
--f  (-firewall)  | Do NOT block IP addresses using firewall              
--h  (-hosts)    | Do NOT add domains to hosts file                      
--u  (-updates)   | Do NOT change windows update settings                 
--l  (-log)      | Do NOT write messages to .log file                    
--e  (-exit)      | Exit when work is complete                      
+-kb (-hotfixes)  | Do NOT uninstall updates
+-d  (-disable)   | Do NOT disable updates
+-t  (-tasks)     | Do NOT disable tasks
+-s  (-services)  | Do NOT disable services
+-i  (-ip)        | Do NOT block IP addresses using route
+-f  (-firewall)  | Do NOT block IP addresses using firewall
+-h  (-hosts)    | Do NOT add domains to hosts file
+-u  (-updates)   | Do NOT change windows update settings
+-l  (-log)      | Do NOT write messages to .log file
+-e  (-exit)      | Exit when done
 
 # Disclaimer
 

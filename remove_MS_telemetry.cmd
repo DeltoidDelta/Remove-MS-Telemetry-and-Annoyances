@@ -4,7 +4,7 @@ endlocal & setlocal EnableDelayedExpansion
 
 rem Script Updated by <https://github.com/simdol>
 rem Script Originally Created by <github.com/tarampampam> #2015
-rem Script Version: 0.3.2 <08/07/2016>
+rem Script Version: 0.3.4 <11/26/2016>
 rem Supports: Microsoft Windows 7/8/8.1
 
 echo.
@@ -38,7 +38,7 @@ echo   *                                                                        
 echo   ***************************************************************************
 echo.
 
-rem Set up default script values and declarе variables
+rem Set up default script values and declare variables
 set ExitOnComplete=0
 set WriteLogFile=1
 set UninstallUpdates=1
@@ -114,10 +114,10 @@ if %UninstallUpdates%==1 (
   rem 3112336 - Windows Update Client for Windows 8.1 and Windows Server 2012 R2: December 2015 // 8.1 / WS 2012 R2
   rem 3112336 - Updated capabilities to upgrade Windows 8.1 and Windows 7 // 8.1 / 7 SP1
   rem 3112336 - Windows Update Client for Windows 7 and Windows Server 2008 R2: February 2016 // 7 SP1 / WS 2008 R2 / Embedded Standard 7 SP1
-  rem 2976978 - Compatibility update for Windows 8.1 and Windows 8 // 8 / 8.1
   rem 2977759 - Compatibility update for Windows 7 RTM // 7
   rem 3170735 - July 2016 Update for Windows Journal // 7 SP1 / 8 / 8.1
   rem 3161102 - Update for Windows Journal component removal // 7 SP1 / 8 / 8.1
+  rem 3184143 -  Remove software related to the Windows 10 free upgrade offer // 7 / 7SP1 / 8.1
 
   for %%? in (
     "3080149"
@@ -147,10 +147,10 @@ if %UninstallUpdates%==1 (
     "3112336"
     "3135445"
     "3123862"
-    "2976978"
     "2977759"
     "3170735"
     "3161102"
+    "3184143"
   ) do call:uninstall_update %%?
 )
 

@@ -494,7 +494,7 @@ goto:end
       set unzip_tool="%temp%\unzip.exe"
       call:log "Downloading unzip tool.."
       rem Original source: http://stahlworks.com/dev/unzip.exe
-      call:download_file "https://www.dropbox.com/s/gxf8d4bg0yyozdh/unzip.exe?dl=1" !unzip_tool!
+      call:download_file "https://raw.githubusercontent.com/simdol/Remove-MS-Telemetry-and-Annoyances/master/external/unzip.exe" !unzip_tool!
     )
     if exist !unzip_tool! (
       if exist "%~dp0\PSWindowsUpdate.zip" (
@@ -505,7 +505,7 @@ goto:end
         set pswu_zip="%temp%\PSWindowsUpdate.zip"
         call:log "Downloading PowerShell module 'PSWindowsUpdate'.."
         rem Original source: https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc/
-        call:download_file "https://www.dropbox.com/s/z61nlkfecmhabil/PSWindowsUpdate.zip?dl=1" !pswu_zip!
+        call:download_file "https://raw.githubusercontent.com/simdol/Remove-MS-Telemetry-and-Annoyances/master/external/PSWindowsUpdate.zip" !pswu_zip!
       )
       if exist !pswu_zip! (
         set pswu_temp="%temp%\pswindowsupdate_content"

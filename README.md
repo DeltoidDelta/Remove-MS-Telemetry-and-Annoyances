@@ -1,6 +1,6 @@
 # Remove Microsoft® Telemetry and Annoyances
 
-This script disables Microsoft®'s telemetry, its evil M$ updates and tasks scheduled within tasks scheduler. It additionally blocks your computer's access to Microsoft®'s telemetry servers to ensure that no data is sent to the M$ servers. Please be advised that this script is *forked from tarampampam's remove_MS_telemetry.cmd, and this is unofficially continued script as the author of the script has abandoned the script.
+This script disables Microsoft®'s telemetry, evil M$ updates and tasks scheduled in the task scheduler. It additionally blocks your computer's access to Microsoft®'s telemetry servers to ensure that no data is sent to M$ servers. Please be advised that this script is *forked from tarampampam's remove_MS_telemetry.cmd*, and this is unofficially continued script as the author of the script has abandoned the script.
 
 # Documentation
 

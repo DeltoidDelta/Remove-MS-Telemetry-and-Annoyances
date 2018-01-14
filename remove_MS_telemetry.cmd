@@ -4,7 +4,7 @@ endlocal & setlocal EnableDelayedExpansion
 
 rem Script Updated by <https://github.com/simdol>
 rem Script Originally Created by <github.com/tarampampam> #2015
-rem Script Version: 0.3.4 <11/26/2016>
+rem Script Version: 0.3.5 <01/14/2017>
 rem Supports: Microsoft Windows 7/8/8.1
 
 echo.

@@ -2,7 +2,7 @@
 title "Remove Microsoft® Telemetry and Annoyances"
 endlocal & setlocal EnableDelayedExpansion
 
-rem Script Updated by <https://github.com/simdol>
+rem Script Updated by <https://github.com/DeltoidDelta>
 rem Script Originally Created by <github.com/tarampampam> #2015
 rem Script Version: 0.3.5 <01/14/2017>
 rem Supports: Microsoft Windows 7/8/8.1
@@ -494,7 +494,7 @@ goto:end
       set unzip_tool="%temp%\unzip.exe"
       call:log "Downloading unzip tool.."
       rem Original source: http://stahlworks.com/dev/unzip.exe
-      call:download_file "https://raw.githubusercontent.com/simdol/Remove-MS-Telemetry-and-Annoyances/master/external/unzip.exe" !unzip_tool!
+      call:download_file "https://raw.githubusercontent.com/DeltoidDelta/Remove-MS-Telemetry-and-Annoyances/master/external/unzip.exe" !unzip_tool!
     )
     if exist !unzip_tool! (
       if exist "%~dp0\PSWindowsUpdate.zip" (
@@ -505,7 +505,7 @@ goto:end
         set pswu_zip="%temp%\PSWindowsUpdate.zip"
         call:log "Downloading PowerShell module 'PSWindowsUpdate'.."
         rem Original source: https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc/
-        call:download_file "https://raw.githubusercontent.com/simdol/Remove-MS-Telemetry-and-Annoyances/master/external/PSWindowsUpdate.zip" !pswu_zip!
+        call:download_file "https://raw.githubusercontent.com/DeltoidDelta/Remove-MS-Telemetry-and-Annoyances/master/external/PSWindowsUpdate.zip" !pswu_zip!
       )
       if exist !pswu_zip! (
         set pswu_temp="%temp%\pswindowsupdate_content"
